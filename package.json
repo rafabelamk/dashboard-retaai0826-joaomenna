@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-retaai0726-joaomenna",
+  "version": "1.0.0",
+  "description": "Dashboard de lançamento RETAAI0726 · João Menna",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}

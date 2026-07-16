@@ -32,8 +32,8 @@ export default async function handler(req, res) {
   const timeRange = JSON.stringify({ since, until });
 
   try {
-    const campUrl = `${GRAPH}/${actId}/insights?fields=${FIELDS_CAMPAIGN}&time_range=${encodeURIComponent(timeRange)}&time_increment=1&level=campaign&limit=500&timezone=America/Sao_Paulo&access_token=${token}`;
-    const adUrl   = `${GRAPH}/${actId}/insights?fields=${FIELDS_AD}&time_range=${encodeURIComponent(timeRange)}&level=ad&limit=200&timezone=America/Sao_Paulo&access_token=${token}`;
+    const campUrl = `${GRAPH}/${actId}/insights?fields=${FIELDS_CAMPAIGN}&time_range=${encodeURIComponent(timeRange)}&time_increment=1&level=campaign&limit=500&access_token=${token}`;
+    const adUrl   = `${GRAPH}/${actId}/insights?fields=${FIELDS_AD}&time_range=${encodeURIComponent(timeRange)}&level=ad&limit=200&access_token=${token}`;
 
     const [campRes, adRes] = await Promise.all([fetch(campUrl), fetch(adUrl)]);
     const [campJson, adJson] = await Promise.all([campRes.json(), adRes.json()]);
